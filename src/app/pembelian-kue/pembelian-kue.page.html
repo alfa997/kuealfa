@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="cake-outline"></ion-icon>
+      Formulir Pembelian Kue Ulang Tahun
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2 class="judul-pembelian">Formulir Pembelian Kue Ulang Tahun</h2>
+  <p class="deskripsi-pembelian">Silakan isi formulir dengan lengkap dan benar.</p>
+
+  <form (ngSubmit)="pesanKue()" class="form-container">
+    
+    <h3>Data Pembeli</h3>
+    <ion-item>
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Nama Pembeli</ion-label>
+      <ion-input [(ngModel)]="namaPembeli" name="namaPembeli" required></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+      <ion-label>Pilih Kue</ion-label>
+      <ion-select [(ngModel)]="pilihanKue" name="pilihanKue" required>
+        <ion-select-option value="brownies">Brownies</ion-select-option>
+        <ion-select-option value="cheesecake">Cheesecake</ion-select-option>
+        <ion-select-option value="tart">Tart</ion-select-option>
+        <ion-select-option value="lapis">Lapis Legit</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-icon name="layers-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Jumlah</ion-label>
+      <ion-input [(ngModel)]="jumlah" name="jumlah" type="number" min="1" required></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-icon name="flame-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Nomor Lilin</ion-label>
+      <ion-input [(ngModel)]="nomorLilin" name="nomorLilin" type="number" min="1" required></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-icon name="location-outline" slot="start"></ion-icon>
+      <ion-label position="floating">Alamat Pengiriman</ion-label>
+      <ion-textarea [(ngModel)]="alamatPengiriman" name="alamatPengiriman" required></ion-textarea>
+    </ion-item>
+    
+    <!-- Tombol Pesan -->
+    <ion-button expand="block" type="submit" color="primary" class="btn-pesan">
+      <ion-icon name="cart-outline"></ion-icon>
+      Pesan Sekarang
+    </ion-button>
+  </form>
+</ion-content>
