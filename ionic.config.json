@@ -1,0 +1,7 @@
+{
+  "name": "toko_kue_ulang_tahun",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
